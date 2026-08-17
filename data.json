@@ -131,6 +131,11 @@
         "time": "20:01:23",
         "event_type": "status_change",
         "action": "状态变动: active"
+      },
+      {
+        "time": "20:23:39",
+        "event_type": "status_change",
+        "action": "状态变动: active - 签名: \"在线.\""
       }
     ]
   }
