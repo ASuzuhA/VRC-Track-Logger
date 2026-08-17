@@ -3,139 +3,175 @@
     "date": "2026-08-17",
     "timeline": [
       {
+        "time": "02:53:19",
         "event_type": "online",
-        "action": "上线",
-        "location": "traveling",
-        "time": "02:53:19"
+        "action": "上线"
       },
       {
+        "time": "02:54:56",
         "event_type": "world_change",
         "world": "窓外の雨音",
-        "location": "wrld_a05ab8f9-e96d-424d-ba31-f53ea410f9d7:33647~friends(usr_43b52e1d-b319-4d23-9db6-e96dc8b08cd0)~region(jp)",
-        "previous_location": "wrld_4432ea9b-729c-46e3-8eaf-846aa0a37fdd:76091~friends(usr_43b52e1d-b319-4d23-9db6-e96dc8b08cd0)~region(jp)",
-        "time": "02:54:56",
-        "duration": "3分钟",
-        "duration_seconds": 204,
-        "leave_reason": "world_change"
+        "duration": "3分钟"
       },
       {
+        "time": "02:58:21",
         "event_type": "world_change",
         "world": "OneRoom -I-",
-        "location": "wrld_917970a0-af27-4438-abad-01ac824ff8f3:36300~friends(usr_43b52e1d-b319-4d23-9db6-e96dc8b08cd0)~region(jp)",
-        "previous_location": "wrld_a05ab8f9-e96d-424d-ba31-f53ea410f9d7:33647~friends(usr_43b52e1d-b319-4d23-9db6-e96dc8b08cd0)~region(jp)",
-        "time": "02:58:21",
-        "duration": "1小时28分钟",
-        "duration_seconds": 5324,
-        "leave_reason": "world_change"
+        "duration": "1小时28分钟"
       },
       {
+        "time": "04:27:05",
         "event_type": "world_change",
         "world": "VRChat Home",
-        "location": "wrld_4432ea9b-729c-46e3-8eaf-846aa0a37fdd:03737~friends(usr_43b52e1d-b319-4d23-9db6-e96dc8b08cd0)~region(jp)",
-        "previous_location": "wrld_917970a0-af27-4438-abad-01ac824ff8f3:36300~friends(usr_43b52e1d-b319-4d23-9db6-e96dc8b08cd0)~region(jp)",
-        "time": "04:27:05",
-        "duration": "4分钟",
-        "duration_seconds": 241,
-        "leave_reason": "offline"
+        "duration": "4分钟"
       },
       {
+        "time": "04:31:07",
         "event_type": "offline",
-        "action": "下线",
-        "location": "wrld_4432ea9b-729c-46e3-8eaf-846aa0a37fdd:03737~friends(usr_43b52e1d-b319-4d23-9db6-e96dc8b08cd0)~region(jp)",
-        "world": "VRChat Home",
-        "time": "04:31:07"
+        "action": "下线"
       },
       {
+        "time": "04:44:33",
         "event_type": "online",
-        "action": "上线",
-        "location": "traveling",
-        "time": "04:44:33"
+        "action": "上线"
       },
       {
+        "time": "04:45:43",
         "event_type": "world_change",
         "world": "挂机修仙.ver1.5beta",
-        "location": "wrld_fb784b28-8a50-4487-9bc5-913b23e6d3fa:78766~group(grp_a46e4e1a-e342-41a2-a61b-43e7aa2528c9)~groupAccessType(public)~region(jp)",
-        "previous_location": "wrld_4432ea9b-729c-46e3-8eaf-846aa0a37fdd:31359~friends(usr_43b52e1d-b319-4d23-9db6-e96dc8b08cd0)~region(jp)",
-        "time": "04:45:43",
-        "duration": "8小时15分钟",
-        "duration_seconds": 29707,
-        "leave_reason": "world_change"
+        "duration": "8小时15分钟"
       },
       {
+        "time": "04:47:33",
+        "event_type": "status_change",
+        "action": "状态变动: active - 签名: \"休息中..\""
+      },
+      {
+        "time": "11:55:43",
+        "event_type": "status_change",
+        "action": "状态变动: active - 签名: \"听歌中..\""
+      },
+      {
+        "time": "12:17:55",
+        "event_type": "status_change",
+        "action": "状态变动: active - 签名: \"休息中..\""
+      },
+      {
+        "time": "12:51:25",
+        "event_type": "status_change",
+        "action": "状态变动: active - 签名: \"闲忙中..\""
+      },
+      {
+        "time": "13:00:50",
         "event_type": "world_change",
         "world": "Wanmiao City",
-        "location": "wrld_8d070eb3-29f3-4873-97a2-40578be03f9d:67048~hidden(usr_2b0fba42-9ff3-4104-b972-a3ad5acaf1cd)~region(jp)",
-        "previous_location": "wrld_fb784b28-8a50-4487-9bc5-913b23e6d3fa:78766~group(grp_a46e4e1a-e342-41a2-a61b-43e7aa2528c9)~groupAccessType(public)~region(jp)",
-        "time": "13:00:50",
-        "duration": "49分钟",
-        "duration_seconds": 2980,
-        "leave_reason": "world_change"
+        "duration": "49分钟"
       },
       {
+        "time": "13:03:15",
+        "event_type": "status_change",
+        "action": "状态变动: active"
+      },
+      {
+        "time": "13:50:31",
         "event_type": "world_change",
         "world": "生化酒店",
-        "location": "wrld_17ad5286-4de4-4f96-97f5-d283ba61d4ed:56337~hidden(usr_2b0fba42-9ff3-4104-b972-a3ad5acaf1cd)~region(jp)",
-        "previous_location": "wrld_8d070eb3-29f3-4873-97a2-40578be03f9d:67048~hidden(usr_2b0fba42-9ff3-4104-b972-a3ad5acaf1cd)~region(jp)",
-        "time": "13:50:31",
-        "duration": "6分钟",
-        "duration_seconds": 385,
-        "leave_reason": "world_change"
+        "duration": "6分钟"
       },
       {
+        "time": "13:56:56",
         "event_type": "world_change",
         "world": "VRC地球生命史ミュージアム ほ乳類館 [JP/EN]",
-        "location": "wrld_f0c226d2-b47e-42b8-bdf1-f24b384641cc:26375~hidden(usr_2b0fba42-9ff3-4104-b972-a3ad5acaf1cd)~region(jp)",
-        "previous_location": "wrld_17ad5286-4de4-4f96-97f5-d283ba61d4ed:56337~hidden(usr_2b0fba42-9ff3-4104-b972-a3ad5acaf1cd)~region(jp)",
-        "time": "13:56:56",
-        "duration": "9分钟",
-        "duration_seconds": 565,
-        "leave_reason": "world_change"
+        "duration": "9分钟"
       },
       {
+        "time": "14:06:21",
         "event_type": "world_change",
         "world": "Re.Aurora",
-        "location": "wrld_1176d283-23de-427a-9322-2a9d5afa6e47:70434~hidden(usr_2b0fba42-9ff3-4104-b972-a3ad5acaf1cd)~region(jp)",
-        "previous_location": "wrld_f0c226d2-b47e-42b8-bdf1-f24b384641cc:26375~hidden(usr_2b0fba42-9ff3-4104-b972-a3ad5acaf1cd)~region(jp)",
-        "time": "14:06:21",
-        "duration": "8分钟",
-        "duration_seconds": 505,
-        "leave_reason": "world_change"
+        "duration": "8分钟"
       },
       {
+        "time": "14:14:46",
         "event_type": "world_change",
         "world": "挂机修仙.ver1.5beta",
-        "location": "wrld_fb784b28-8a50-4487-9bc5-913b23e6d3fa:78766~group(grp_a46e4e1a-e342-41a2-a61b-43e7aa2528c9)~groupAccessType(public)~region(jp)",
-        "previous_location": "wrld_1176d283-23de-427a-9322-2a9d5afa6e47:70434~hidden(usr_2b0fba42-9ff3-4104-b972-a3ad5acaf1cd)~region(jp)",
-        "time": "14:14:46",
-        "duration": "2小时26分钟",
-        "duration_seconds": 8797,
-        "leave_reason": "world_change"
+        "duration": "2小时26分钟"
       },
       {
-        "event_type": "world_change",
-        "world": "未知房间",
-        "location": "private",
-        "previous_location": "wrld_fb784b28-8a50-4487-9bc5-913b23e6d3fa:78766~group(grp_a46e4e1a-e342-41a2-a61b-43e7aa2528c9)~groupAccessType(public)~region(jp)",
+        "time": "14:15:41",
+        "event_type": "status_change",
+        "action": "状态变动: active - 签名: \"休息中..\""
+      },
+      {
+        "time": "15:53:56",
+        "event_type": "status_change",
+        "action": "状态变动: active - 签名: \"听歌AFK..\""
+      },
+      {
         "time": "16:41:24",
-        "duration": "6小时16分钟",
-        "duration_seconds": 22563,
-        "leave_reason": "world_change"
-      },
-      {
         "event_type": "world_change",
         "world": "未知房间",
-        "location": "private",
-        "previous_location": "wrld_4432ea9b-729c-46e3-8eaf-846aa0a37fdd:17271~friends(usr_43b52e1d-b319-4d23-9db6-e96dc8b08cd0)~region(jp)",
-        "time": "22:57:28",
-        "duration": "22分钟",
-        "duration_seconds": 1361,
-        "leave_reason": "offline"
+        "duration": "6小时16分钟"
       },
       {
+        "time": "17:36:45",
+        "event_type": "status_change",
+        "action": "状态变动: active - 签名: \"听歌中..\""
+      },
+      {
+        "time": "19:28:34",
+        "event_type": "status_change",
+        "action": "状态变动: active"
+      },
+      {
+        "time": "19:36:28",
+        "event_type": "status_change",
+        "action": "状态变动: active - 签名: \"休息中..\""
+      },
+      {
+        "time": "19:49:18",
+        "event_type": "status_change",
+        "action": "状态变动: active"
+      },
+      {
+        "time": "19:49:33",
+        "event_type": "status_change",
+        "action": "状态变动: active - 签名: \"休息中...\""
+      },
+      {
+        "time": "19:56:18",
+        "event_type": "status_change",
+        "action": "状态变动: active - 签名: \"休息中..\""
+      },
+      {
+        "time": "20:01:23",
+        "event_type": "status_change",
+        "action": "状态变动: active"
+      },
+      {
+        "time": "20:23:39",
+        "event_type": "status_change",
+        "action": "状态变动: active - 签名: \"在线.\""
+      },
+      {
+        "time": "20:33:30",
+        "event_type": "status_change",
+        "action": "状态变动: active"
+      },
+      {
+        "time": "21:54:59",
+        "event_type": "status_change",
+        "action": "状态变动: active - 签名: \"听歌中..\""
+      },
+      {
+        "time": "22:57:28",
+        "event_type": "world_change",
+        "world": "未知房间",
+        "duration": "22分钟"
+      },
+      {
+        "time": "23:20:09",
         "event_type": "offline",
-        "action": "下线",
-        "location": "private",
-        "time": "23:20:09"
+        "action": "下线"
       }
     ]
   }
