@@ -101,6 +101,16 @@
         "time": "17:36:45",
         "event_type": "status_change",
         "action": "状态变动: active - 签名: \"听歌中..\""
+      },
+      {
+        "time": "19:28:34",
+        "event_type": "status_change",
+        "action": "状态变动: active"
+      },
+      {
+        "time": "19:36:28",
+        "event_type": "status_change",
+        "action": "状态变动: active - 签名: \"休息中..\""
       }
     ]
   }
