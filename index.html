@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VRChat Track Logger</title>
+
     <style>
         :root {
             --bg-color: #f4f7f6;
@@ -12,10 +13,14 @@
             --timeline-line: #dcdfe6;
             --card-bg: #ffffff;
             --accent: #3498db;
+
             --ev-world: #e67e22;
             --ev-status: #27ae60;
+
+            /* Online / Offline */
             --ev-online: #2ecc71;
             --ev-offline: #95a5a6;
+
             --ev-avatar: #9b59b6;
             --ev-bio: #e74c3c;
         }
@@ -27,7 +32,13 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                sans-serif;
+
             background-color: var(--bg-color);
             color: var(--text-main);
             line-height: 1.6;
@@ -133,7 +144,7 @@
             padding: 16px 20px;
             margin-bottom: 15px;
             border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
             border-left: 4px solid var(--timeline-line);
             position: relative;
         }
@@ -149,6 +160,10 @@
                 background-color: var(--timeline-line);
             }
         }
+
+        /* =====================================================
+           事件卡片颜色
+           ===================================================== */
 
         .event-item.ev-world {
             border-left-color: var(--ev-world);
@@ -173,6 +188,10 @@
         .event-item.ev-bio {
             border-left-color: var(--ev-bio);
         }
+
+        /* =====================================================
+           顶部时间 / 标签
+           ===================================================== */
 
         .ev-meta {
             display: flex;
@@ -202,6 +221,10 @@
             font-size: 0.95rem;
         }
 
+        /* =====================================================
+           房间
+           ===================================================== */
+
         .world-name strong {
             color: #1a1a1a;
         }
@@ -212,11 +235,14 @@
             margin-top: 2px;
         }
 
+        /* =====================================================
+           状态 / Online / Offline
+           ===================================================== */
+
         .status-text {
             color: #27ae60;
         }
 
-        /* 新增：上线/下线文字颜色 */
         .online-text {
             color: #27ae60;
             font-weight: bold;
@@ -228,38 +254,89 @@
         }
     </style>
 </head>
+
 <body>
 
     <div class="container">
+
         <header>
             <h1>Track Logger</h1>
-            <p class="subtitle">VRChat 玩家活动时间轨迹</p>
+
+            <p class="subtitle">
+                VRChat 玩家活动时间轨迹
+            </p>
+
             <div class="status-bar">
-                <span id="data-status">正在获取数据...</span>
+                <span id="data-status">
+                    正在获取数据...
+                </span>
             </div>
         </header>
 
-        <div class="timeline" id="timeline-container"></div>
+        <div
+            class="timeline"
+            id="timeline-container">
+        </div>
+
     </div>
 
+
     <script>
+
+        /* =====================================================
+           事件类型定义
+           ===================================================== */
+
         const eventMeta = {
-            'world_change':  { icon: '📍', label: '房间', tagClass: 'ev-world' },
-            'status_change': { icon: '💬', label: '状态', tagClass: 'ev-status' },
 
-            // 新增：上线 / 下线
-            'online':        { icon: '🟢', label: '上线', tagClass: 'ev-online' },
-            'offline':       { icon: '🔴', label: '下线', tagClass: 'ev-offline' },
+            'world_change': {
+                icon: '📍',
+                label: '房间',
+                tagClass: 'ev-world'
+            },
 
-            'avatar_change': { icon: '👗', label: '模型', tagClass: 'ev-avatar' },
-            'bio_change':    { icon: '📝', label: '简介', tagClass: 'ev-bio' }
+            'status_change': {
+                icon: '💬',
+                label: '状态',
+                tagClass: 'ev-status'
+            },
+
+            'online': {
+                icon: '🟢',
+                label: '上线',
+                tagClass: 'ev-online'
+            },
+
+            'offline': {
+                icon: '🔴',
+                label: '下线',
+                tagClass: 'ev-offline'
+            },
+
+            'avatar_change': {
+                icon: '👗',
+                label: '模型',
+                tagClass: 'ev-avatar'
+            },
+
+            'bio_change': {
+                icon: '📝',
+                label: '简介',
+                tagClass: 'ev-bio'
+            }
         };
 
-        // 核心合并算法
+
+        /* =====================================================
+           将相同时间的事件合并
+           ===================================================== */
+
         function groupEventsByTime(timelineArray) {
+
             const timeMap = new Map();
 
             timelineArray.forEach(item => {
+
                 const timeKey = item.time;
 
                 if (!timeMap.has(timeKey)) {
@@ -269,166 +346,404 @@
                 timeMap.get(timeKey).push(item);
             });
 
-            return Array.from(timeMap.entries()).map(([time, events]) => ({
-                time,
-                events
-            }));
+            return Array
+                .from(timeMap.entries())
+                .map(([time, events]) => ({
+                    time,
+                    events
+                }));
         }
 
+
+        /* =====================================================
+           获取并渲染数据
+           ===================================================== */
+
         async function fetchAndRenderTimeline() {
-            const container = document.getElementById('timeline-container');
-            const statusNode = document.getElementById('data-status');
+
+            const container =
+                document.getElementById(
+                    'timeline-container'
+                );
+
+            const statusNode =
+                document.getElementById(
+                    'data-status'
+                );
 
             try {
-                // 加上时间戳防止 GitHub Pages/浏览器 CDN 强缓存 data.json
-                const response = await fetch(`data.json?t=${Date.now()}`);
+
+                /*
+                 * 加时间戳避免：
+                 *
+                 * GitHub Pages
+                 * 浏览器
+                 * CDN
+                 *
+                 * 缓存旧 data.json
+                 */
+
+                const response = await fetch(
+                    `data.json?t=${Date.now()}`
+                );
 
                 if (!response.ok) {
-                    throw new Error(`HTTP Error ${response.status}`);
+                    throw new Error(
+                        `HTTP Error ${response.status}`
+                    );
                 }
 
-                const rawData = await response.json();
+                const rawData =
+                    await response.json();
 
-                if (!rawData || rawData.length === 0) {
-                    statusNode.textContent = '暂无轨迹数据';
+
+                /* =================================================
+                   没有数据
+                   ================================================= */
+
+                if (
+                    !rawData ||
+                    rawData.length === 0
+                ) {
+
+                    statusNode.textContent =
+                        '暂无轨迹数据';
+
+                    container.innerHTML = '';
+
                     return;
                 }
 
-                const now = new Date().toLocaleTimeString();
-                statusNode.textContent = `最后更新时间: ${now} (自动轮询中)`;
+
+                /* =================================================
+                   更新时间
+                   ================================================= */
+
+                const now =
+                    new Date().toLocaleTimeString();
+
+                statusNode.textContent =
+                    `最后更新时间: ${now} (自动轮询中)`;
+
+
+                /* =================================================
+                   清空旧内容
+                   ================================================= */
 
                 container.innerHTML = '';
 
-                // 日期倒序（最新的天在最上面）
-                const reversedRawData = [...rawData].reverse();
 
-                reversedRawData.forEach(dayData => {
-                    const dateGroupNode = document.createElement('div');
-                    dateGroupNode.className = 'date-group';
+                /* =================================================
+                   日期倒序
+                   最新日期显示在最上面
+                   ================================================= */
 
-                    const dateTitleNode = document.createElement('div');
-                    dateTitleNode.className = 'date-title';
-                    dateTitleNode.innerHTML = `<span>${dayData.date}</span>`;
+                const reversedRawData =
+                    [...rawData].reverse();
 
-                    dateGroupNode.appendChild(dateTitleNode);
 
-                    const eventsContainerNode = document.createElement('div');
-                    eventsContainerNode.className = 'events-container';
+                reversedRawData.forEach(
+                    dayData => {
 
-                    // 时间组倒序（最新的时间点在最上面）
-                    const groupedTimeline =
-                        groupEventsByTime(dayData.timeline).reverse();
+                        const dateGroupNode =
+                            document.createElement(
+                                'div'
+                            );
 
-                    groupedTimeline.forEach(timeBlock => {
-                        const eventNode = document.createElement('div');
+                        dateGroupNode.className =
+                            'date-group';
 
-                        const primaryType =
-                            timeBlock.events[0].event_type;
 
-                        const cardBorderClass =
-                            eventMeta[primaryType]
-                                ? eventMeta[primaryType].tagClass
-                                : '';
+                        /* =========================================
+                           日期标题
+                           ========================================= */
 
-                        eventNode.className =
-                            `event-item ${cardBorderClass}`;
+                        const dateTitleNode =
+                            document.createElement(
+                                'div'
+                            );
 
-                        let innerHtml = `
-                            <div class="ev-meta">
-                                <span class="ev-time">${timeBlock.time}</span>
-                                <div class="ev-tags">
-                        `;
+                        dateTitleNode.className =
+                            'date-title';
 
-                        timeBlock.events.forEach(e => {
-                            const meta =
-                                eventMeta[e.event_type] ||
-                                {
-                                    icon: '📌',
-                                    label: '记录'
-                                };
+                        dateTitleNode.innerHTML =
+                            `<span>${dayData.date}</span>`;
 
-                            innerHtml +=
-                                `<span class="ev-type-tag">${meta.icon} ${meta.label}</span> `;
-                        });
+                        dateGroupNode.appendChild(
+                            dateTitleNode
+                        );
 
-                        innerHtml += `
-                                </div>
-                            </div>
-                            <div class="ev-content">
-                        `;
 
-                        timeBlock.events.forEach(e => {
-                            innerHtml += `<div class="sub-event-row">`;
+                        /* =========================================
+                           事件容器
+                           ========================================= */
 
-                            switch (e.event_type) {
+                        const eventsContainerNode =
+                            document.createElement(
+                                'div'
+                            );
 
-                                case 'world_change':
-                                    innerHtml += `
-                                        <p class="world-name">
-                                            移动至房间:
-                                            <strong>${e.world}</strong>
-                                        </p>
-                                        <p class="world-duration">
-                                            ⏱️ 停留时长: ${e.duration}
-                                        </p>
-                                    `;
-                                    break;
+                        eventsContainerNode.className =
+                            'events-container';
 
-                                case 'status_change':
-                                    innerHtml +=
-                                        `<p class="status-text">${e.action}</p>`;
-                                    break;
 
-                                /* 新增：上线 */
-                                case 'online':
-                                    innerHtml += `
-                                        <p class="online-text">
-                                            🟢 ${e.action || '上线'}
-                                        </p>
-                                    `;
-                                    break;
+                        /* =========================================
+                           时间倒序
+                           最新时间显示在最上面
+                           ========================================= */
 
-                                /* 新增：下线 */
-                                case 'offline':
-                                    innerHtml += `
-                                        <p class="offline-text">
-                                            🔴 ${e.action || '下线'}
-                                        </p>
-                                    `;
-                                    break;
+                        const groupedTimeline =
+                            groupEventsByTime(
+                                dayData.timeline || []
+                            ).reverse();
 
-                                default:
-                                    innerHtml +=
-                                        `<p>${e.action || ''}</p>`;
+
+                        groupedTimeline.forEach(
+                            timeBlock => {
+
+                                const eventNode =
+                                    document.createElement(
+                                        'div'
+                                    );
+
+
+                                /* =================================
+                                   主要事件类型
+                                   ================================= */
+
+                                const primaryType =
+                                    timeBlock.events[0]
+                                        ?.event_type;
+
+
+                                const cardBorderClass =
+                                    eventMeta[primaryType]
+                                        ? eventMeta[
+                                            primaryType
+                                        ].tagClass
+                                        : '';
+
+
+                                eventNode.className =
+                                    `event-item ${cardBorderClass}`;
+
+
+                                /* =================================
+                                   顶部时间 + 标签
+                                   ================================= */
+
+                                let innerHtml = `
+                                    <div class="ev-meta">
+
+                                        <span class="ev-time">
+                                            ${timeBlock.time}
+                                        </span>
+
+                                        <div class="ev-tags">
+                                `;
+
+
+                                timeBlock.events.forEach(
+                                    e => {
+
+                                        const meta =
+                                            eventMeta[
+                                                e.event_type
+                                            ] || {
+                                                icon: '📌',
+                                                label: '记录'
+                                            };
+
+
+                                        innerHtml += `
+                                            <span class="ev-type-tag">
+                                                ${meta.icon}
+                                                ${meta.label}
+                                            </span>
+                                        `;
+                                    }
+                                );
+
+
+                                innerHtml += `
+                                        </div>
+                                    </div>
+
+                                    <div class="ev-content">
+                                `;
+
+
+                                /* =================================
+                                   事件内容
+                                   ================================= */
+
+                                timeBlock.events.forEach(
+                                    e => {
+
+                                        innerHtml += `
+                                            <div class="sub-event-row">
+                                        `;
+
+
+                                        switch (
+                                            e.event_type
+                                        ) {
+
+
+                                            /* =====================
+                                               房间
+                                               ===================== */
+
+                                            case 'world_change':
+
+                                                innerHtml += `
+                                                    <p class="world-name">
+                                                        移动至房间:
+                                                        <strong>
+                                                            ${e.world || '未知房间'}
+                                                        </strong>
+                                                    </p>
+
+                                                    <p class="world-duration">
+                                                        ⏱️ 停留时长:
+                                                        ${e.duration || '未知'}
+                                                    </p>
+                                                `;
+
+                                                break;
+
+
+                                            /* =====================
+                                               状态 / 签名
+                                               ===================== */
+
+                                            case 'status_change':
+
+                                                innerHtml += `
+                                                    <p class="status-text">
+                                                        ${e.action || ''}
+                                                    </p>
+                                                `;
+
+                                                break;
+
+
+                                            /* =====================
+                                               Online
+                                               ===================== */
+
+                                            case 'online':
+
+                                                innerHtml += `
+                                                    <p class="online-text">
+                                                        🟢 ${e.action || '上线'}
+                                                    </p>
+                                                `;
+
+                                                break;
+
+
+                                            /* =====================
+                                               Offline
+                                               ===================== */
+
+                                            case 'offline':
+
+                                                innerHtml += `
+                                                    <p class="offline-text">
+                                                        🔴 ${e.action || '下线'}
+                                                    </p>
+                                                `;
+
+                                                break;
+
+
+                                            /* =====================
+                                               其他事件
+                                               ===================== */
+
+                                            default:
+
+                                                innerHtml += `
+                                                    <p>
+                                                        ${e.action || ''}
+                                                    </p>
+                                                `;
+
+                                                break;
+                                        }
+
+
+                                        innerHtml += `
+                                            </div>
+                                        `;
+                                    }
+                                );
+
+
+                                innerHtml += `
+                                    </div>
+                                `;
+
+
+                                eventNode.innerHTML =
+                                    innerHtml;
+
+
+                                eventsContainerNode.appendChild(
+                                    eventNode
+                                );
                             }
+                        );
 
-                            innerHtml += `</div>`;
-                        });
 
-                        innerHtml += `</div>`;
+                        dateGroupNode.appendChild(
+                            eventsContainerNode
+                        );
 
-                        eventNode.innerHTML = innerHtml;
-                        eventsContainerNode.appendChild(eventNode);
-                    });
+                        container.appendChild(
+                            dateGroupNode
+                        );
+                    }
+                );
 
-                    dateGroupNode.appendChild(eventsContainerNode);
-                    container.appendChild(dateGroupNode);
-                });
 
             } catch (err) {
+
                 console.error(err);
+
                 statusNode.textContent =
                     `❌ 数据加载异常: ${err.message}`;
             }
         }
 
-        // 1. 页面加载完成后立即拉取一次
+
+        /* =====================================================
+           页面启动
+           ===================================================== */
+
         window.onload = () => {
+
+            /*
+             * 页面加载后立即获取一次
+             */
+
             fetchAndRenderTimeline();
 
-            // 2. 开启前端轮询（默认每 30 秒自动拉取最新 data.json，无需刷网页）
-            setInterval(fetchAndRenderTimeline, 30000);
+
+            /*
+             * 每 30 秒自动刷新
+             *
+             * 不需要手动刷新网页
+             */
+
+            setInterval(
+                fetchAndRenderTimeline,
+                30000
+            );
         };
+
     </script>
+
 </body>
 </html>
