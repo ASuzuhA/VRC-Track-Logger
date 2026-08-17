@@ -1,0 +1,96 @@
+[
+  {
+    "date": "2026-08-17",
+    "timeline": [
+      {
+        "time": "02:54:56",
+        "event_type": "world_change",
+        "world": "窓外の雨音",
+        "duration": "3分钟"
+      },
+      {
+        "time": "02:58:21",
+        "event_type": "world_change",
+        "world": "OneRoom -I-",
+        "duration": "1小时28分钟"
+      },
+      {
+        "time": "04:27:05",
+        "event_type": "world_change",
+        "world": "VRChat Home",
+        "duration": "18分钟"
+      },
+      {
+        "time": "04:45:43",
+        "event_type": "world_change",
+        "world": "挂机修仙.ver1.5beta",
+        "duration": "8小时15分钟"
+      },
+      {
+        "time": "04:47:33",
+        "event_type": "status_change",
+        "action": "状态变动: active - 签名: \"休息中..\""
+      },
+      {
+        "time": "11:55:43",
+        "event_type": "status_change",
+        "action": "状态变动: active - 签名: \"听歌中..\""
+      },
+      {
+        "time": "12:17:55",
+        "event_type": "status_change",
+        "action": "状态变动: active - 签名: \"休息中..\""
+      },
+      {
+        "time": "12:51:25",
+        "event_type": "status_change",
+        "action": "状态变动: active - 签名: \"闲忙中..\""
+      },
+      {
+        "time": "13:00:50",
+        "event_type": "world_change",
+        "world": "Wanmiao City",
+        "duration": "49分钟"
+      },
+      {
+        "time": "13:03:15",
+        "event_type": "status_change",
+        "action": "状态变动: active"
+      },
+      {
+        "time": "13:50:31",
+        "event_type": "world_change",
+        "world": "生化酒店",
+        "duration": "6分钟"
+      },
+      {
+        "time": "13:56:56",
+        "event_type": "world_change",
+        "world": "VRC地球生命史ミュージアム ほ乳類館 [JP/EN]",
+        "duration": "9分钟"
+      },
+      {
+        "time": "14:06:21",
+        "event_type": "world_change",
+        "world": "Re.Aurora",
+        "duration": "8分钟"
+      },
+      {
+        "time": "14:14:46",
+        "event_type": "world_change",
+        "world": "挂机修仙.ver1.5beta",
+        "duration": "至今 / 未离场"
+      },
+      {
+        "time": "14:15:41",
+        "event_type": "status_change",
+        "action": "状态变动: active - 签名: \"休息中..\""
+      },
+      {
+        "time": "15:53:56",
+        "event_type": "status_change",
+        "action": "状态变动: active - 签名: \"听歌AFK..\""
+      }
+    ]
+  }
+]
