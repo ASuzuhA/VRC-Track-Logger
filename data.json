@@ -95,7 +95,7 @@
         "time": "16:41:24",
         "event_type": "world_change",
         "world": "",
-        "duration": "至今 / 未离场"
+        "duration": "6小时16分钟"
       },
       {
         "time": "17:36:45",
@@ -146,6 +146,12 @@
         "time": "21:54:59",
         "event_type": "status_change",
         "action": "状态变动: active - 签名: \"听歌中..\""
+      },
+      {
+        "time": "22:57:28",
+        "event_type": "world_change",
+        "world": "",
+        "duration": "至今 / 未离场"
       }
     ]
   }
