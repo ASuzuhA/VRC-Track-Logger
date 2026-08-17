@@ -126,6 +126,11 @@
         "time": "19:56:18",
         "event_type": "status_change",
         "action": "状态变动: active - 签名: \"休息中..\""
+      },
+      {
+        "time": "20:01:23",
+        "event_type": "status_change",
+        "action": "状态变动: active"
       }
     ]
   }
