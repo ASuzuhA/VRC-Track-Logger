@@ -76,6 +76,12 @@
         "time": "19:17:57",
         "event_type": "world_change",
         "world": "送り火",
+        "duration": "3分钟"
+      },
+      {
+        "time": "19:20:58",
+        "event_type": "world_change",
+        "world": "The Beach House World",
         "duration": "至今 / 未离场"
       }
     ]
