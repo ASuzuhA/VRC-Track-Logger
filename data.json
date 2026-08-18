@@ -54,6 +54,12 @@
         "time": "18:52:22",
         "event_type": "world_change",
         "world": "'Among Us' game",
+        "duration": "1分钟"
+      },
+      {
+        "time": "18:54:17",
+        "event_type": "world_change",
+        "world": "送り火",
         "duration": "至今 / 未离场"
       }
     ]
