@@ -48,6 +48,12 @@
         "time": "18:49:52",
         "event_type": "world_change",
         "world": "ExhibitionStreet",
+        "duration": "2分钟"
+      },
+      {
+        "time": "18:52:22",
+        "event_type": "world_change",
+        "world": "'Among Us' game",
         "duration": "至今 / 未离场"
       }
     ]
