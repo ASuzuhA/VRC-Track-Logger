@@ -71,6 +71,12 @@
         "time": "19:13:27",
         "event_type": "online",
         "action": "上线"
+      },
+      {
+        "time": "19:17:57",
+        "event_type": "world_change",
+        "world": "送り火",
+        "duration": "至今 / 未离场"
       }
     ]
   },
