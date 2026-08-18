@@ -82,7 +82,18 @@
         "time": "19:20:58",
         "event_type": "world_change",
         "world": "The Beach House World",
+        "duration": "2分钟"
+      },
+      {
+        "time": "19:23:13",
+        "event_type": "world_change",
+        "world": "VRChat Home",
         "duration": "至今 / 未离场"
+      },
+      {
+        "time": "19:23:53",
+        "event_type": "status_change",
+        "action": "状态变动: active - 签名: \"休息中..\""
       }
     ]
   },
