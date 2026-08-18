@@ -28,6 +28,11 @@
         "time": "16:18:34",
         "event_type": "offline",
         "action": "下线"
+      },
+      {
+        "time": "16:22:27",
+        "event_type": "status_change",
+        "action": "状态变动: active - 签名: \"休息中..\""
       }
     ]
   },
