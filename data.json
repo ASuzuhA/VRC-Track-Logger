@@ -33,6 +33,11 @@
         "time": "16:22:27",
         "event_type": "status_change",
         "action": "状态变动: active - 签名: \"休息中..\""
+      },
+      {
+        "time": "18:39:57",
+        "event_type": "online",
+        "action": "上线"
       }
     ]
   },
