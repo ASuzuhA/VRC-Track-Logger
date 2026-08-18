@@ -60,7 +60,12 @@
         "time": "18:54:17",
         "event_type": "world_change",
         "world": "送り火",
-        "duration": "至今 / 未离场"
+        "duration": "6分钟"
+      },
+      {
+        "time": "19:00:33",
+        "event_type": "offline",
+        "action": "下线"
       }
     ]
   },
