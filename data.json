@@ -52,6 +52,11 @@
         "time": "20:06:12",
         "event_type": "status_change",
         "action": "状态变动: active - 签名: \"听歌AFK..\""
+      },
+      {
+        "time": "20:47:40",
+        "event_type": "status_change",
+        "action": "状态变动: active - 签名: \"休息中..\""
       }
     ]
   },
