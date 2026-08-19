@@ -67,6 +67,11 @@
         "time": "21:55:04",
         "event_type": "online",
         "action": "上线"
+      },
+      {
+        "time": "21:59:59",
+        "event_type": "status_change",
+        "action": "状态变动: active - 签名: \"AFK..\""
       }
     ]
   },
