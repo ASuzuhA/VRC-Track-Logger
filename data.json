@@ -77,6 +77,12 @@
         "time": "22:00:59",
         "event_type": "world_change",
         "world": "[CN] 中文新手教程 [Tutorial]",
+        "duration": "1小时56分钟"
+      },
+      {
+        "time": "23:57:07",
+        "event_type": "world_change",
+        "world": "[CN] 中文新手教程 [Tutorial]",
         "duration": "至今 / 未离场"
       }
     ]
