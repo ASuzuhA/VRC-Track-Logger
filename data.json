@@ -72,6 +72,12 @@
         "time": "21:59:59",
         "event_type": "status_change",
         "action": "状态变动: active - 签名: \"AFK..\""
+      },
+      {
+        "time": "22:00:59",
+        "event_type": "world_change",
+        "world": "[CN] 中文新手教程 [Tutorial]",
+        "duration": "至今 / 未离场"
       }
     ]
   },
