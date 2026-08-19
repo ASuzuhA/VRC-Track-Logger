@@ -46,7 +46,7 @@
         "time": "19:07:45",
         "event_type": "world_change",
         "world": "everyone is asleep except you",
-        "duration": "至今 / 未离场"
+        "duration": "1小时43分钟"
       },
       {
         "time": "20:06:12",
@@ -57,6 +57,11 @@
         "time": "20:47:40",
         "event_type": "status_change",
         "action": "状态变动: active - 签名: \"休息中..\""
+      },
+      {
+        "time": "20:51:01",
+        "event_type": "offline",
+        "action": "下线"
       }
     ]
   },
