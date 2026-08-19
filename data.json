@@ -26,6 +26,11 @@
         "time": "18:09:29",
         "event_type": "status_change",
         "action": "状态变动: active - 签名: \"吃饭中..\""
+      },
+      {
+        "time": "18:12:20",
+        "event_type": "offline",
+        "action": "下线"
       }
     ]
   },
