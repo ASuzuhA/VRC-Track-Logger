@@ -41,6 +41,12 @@
         "time": "19:06:10",
         "event_type": "status_change",
         "action": "状态变动: active - 签名: \"听歌中..\""
+      },
+      {
+        "time": "19:07:45",
+        "event_type": "world_change",
+        "world": "everyone is asleep except you",
+        "duration": "至今 / 未离场"
       }
     ]
   },
