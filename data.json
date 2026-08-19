@@ -36,6 +36,11 @@
         "time": "19:05:35",
         "event_type": "online",
         "action": "上线"
+      },
+      {
+        "time": "19:06:10",
+        "event_type": "status_change",
+        "action": "状态变动: active - 签名: \"听歌中..\""
       }
     ]
   },
