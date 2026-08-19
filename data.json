@@ -6,6 +6,11 @@
         "time": "00:03:14",
         "event_type": "status_change",
         "action": "状态变动: active - 签名: \"琢磨改模中..\""
+      },
+      {
+        "time": "11:25:27",
+        "event_type": "status_change",
+        "action": "状态变动: active - 签名: \"吃饭中..\""
       }
     ]
   },
