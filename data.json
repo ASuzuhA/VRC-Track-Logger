@@ -31,6 +31,11 @@
         "time": "18:12:20",
         "event_type": "offline",
         "action": "下线"
+      },
+      {
+        "time": "19:05:35",
+        "event_type": "online",
+        "action": "上线"
       }
     ]
   },
