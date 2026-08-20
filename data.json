@@ -69,6 +69,12 @@
         "time": "13:20:39",
         "event_type": "world_change",
         "world": "Tiles",
+        "duration": "39分钟"
+      },
+      {
+        "time": "14:00:25",
+        "event_type": "world_change",
+        "world": "ODESZA - A Moment Apart",
         "duration": "至今 / 未离场"
       }
     ]
