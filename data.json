@@ -43,6 +43,11 @@
         "time": "12:04:59",
         "event_type": "status_change",
         "action": "状态变动: active - 签名: \"AFK..\""
+      },
+      {
+        "time": "12:05:04",
+        "event_type": "status_change",
+        "action": "状态变动: active - 签名: \"吃饭中..\""
       }
     ]
   },
