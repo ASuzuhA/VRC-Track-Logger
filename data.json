@@ -6,6 +6,11 @@
         "time": "11:41:49",
         "event_type": "online",
         "action": "上线"
+      },
+      {
+        "time": "11:45:30",
+        "event_type": "offline",
+        "action": "下线"
       }
     ]
   },
@@ -93,7 +98,7 @@
         "time": "23:57:07",
         "event_type": "world_change",
         "world": "[CN] 中文新手教程 [Tutorial]",
-        "duration": "至今 / 未离场"
+        "duration": "11小时48分钟"
       }
     ]
   },
