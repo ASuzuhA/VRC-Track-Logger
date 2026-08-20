@@ -26,7 +26,23 @@
         "time": "11:52:09",
         "event_type": "world_change",
         "world": "未知房间",
+        "duration": "12分钟"
+      },
+      {
+        "time": "12:04:54",
+        "event_type": "status_change",
+        "action": "状态变动: active - 签名: \"测试中..\""
+      },
+      {
+        "time": "12:04:55",
+        "event_type": "world_change",
+        "world": "VRChat Home",
         "duration": "至今 / 未离场"
+      },
+      {
+        "time": "12:04:59",
+        "event_type": "status_change",
+        "action": "状态变动: active - 签名: \"AFK..\""
       }
     ]
   },
