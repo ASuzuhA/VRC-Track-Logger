@@ -37,7 +37,7 @@
         "time": "12:04:55",
         "event_type": "world_change",
         "world": "VRChat Home",
-        "duration": "至今 / 未离场"
+        "duration": "1分钟"
       },
       {
         "time": "12:04:59",
@@ -48,6 +48,12 @@
         "time": "12:05:04",
         "event_type": "status_change",
         "action": "状态变动: active - 签名: \"吃饭中..\""
+      },
+      {
+        "time": "12:06:25",
+        "event_type": "world_change",
+        "world": "未知房间",
+        "duration": "至今 / 未离场"
       }
     ]
   },
